@@ -13,4 +13,4 @@ jobs:
       # - run: bats -v
       - run: pwd
       - run: ls
-      - run: echo ${{ secret.DOCKER_HUB_USER }}
+      - run: echo ${{ secrets.DOCKER_HUB_USER }}
