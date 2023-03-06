@@ -6,8 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+      # - uses: actions/setup-node@v3
+      #   with:
+      #     node-version: '14'
+      # - run: npm install -g bats
+      # - run: bats -v
+      - run: pwd
+      - run: ls
+      - run: echo ${{ secret.DOCKER_HUB_USER }}
