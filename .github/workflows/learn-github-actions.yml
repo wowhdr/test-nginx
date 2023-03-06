@@ -1,10 +1,9 @@
 name: learn-github-actions
-run-name: ${{ test.vars.DOCKER_HUB_USER }} is learning GitHub Actions
+run-name: ${{ GITHUB_ACTOR }} is learning GitHub Actions
 on: [push]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
-    # environment: test
     steps:
       - uses: actions/checkout@v3
       # - uses: actions/setup-node@v3
@@ -14,8 +13,8 @@ jobs:
       # - run: bats -v
       - run: pwd
       - run: ls
-      - run: echo "$DOCKER_HUB_USER"
-      - run: echo "${{ vars.DOCKER_HUB_USER }}" > user.txt
+      - run: echo $DOCKER_HUB_USER"
+      - run: echo ${{ vars.DOCKER_HUB_USER }} > user.txt
       - run: cat user.txt
       - run: echo ${{ secrets.DOCKER_HUB_PASSWD }} > pass.txt
       - run: cat pass.txt
