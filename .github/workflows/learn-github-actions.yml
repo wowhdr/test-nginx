@@ -1,5 +1,5 @@
 name: learn-github-actions
-run-name: $GITHUB_ACTOR is learning GitHub Actions
+run-name: ${{ vars.ENV_TEST }} is learning GitHub Actions
 on: [push]
 jobs:
   check-bats-version:
@@ -13,7 +13,6 @@ jobs:
       # - run: bats -v
       - run: pwd
       - run: ls
-      - run: echo $DOCKER_HUB_USER"
       - run: echo ${{ vars.DOCKER_HUB_USER }} > user.txt
       - run: cat user.txt
       - run: echo ${{ secrets.DOCKER_HUB_PASSWD }} > pass.txt
