@@ -13,7 +13,7 @@ jobs:
       # - run: bats -v
       - run: pwd
       - run: ls
-      - run: echo ${{ env.DOCKER_HUB_USER }} > user.txt
+      - run: echo ${{ vars.DOCKER_HUB_USER }} > user.txt
       - run: cat user.txt
       - run: echo ${{ secrets.DOCKER_HUB_PASSWD }} > pass.txt
       - run: cat pass.txt
