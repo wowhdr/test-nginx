@@ -11,9 +11,10 @@ jobs:
       #     node-version: '14'
       # - run: npm install -g bats
       # - run: bats -v
-      - run: pwd
+      - run: doc
       - run: ls
       - run: echo ${{ vars.DOCKER_HUB_USER }} > user.txt
       - run: cat user.txt
       - run: echo ${{ secrets.DOCKER_HUB_PASSWD }} > pass.txt
       - run: cat pass.txt
+      - run: docker -v
