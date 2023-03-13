@@ -5,7 +5,6 @@ metadata:
   labels:
     app: test-nginx
   name: test-nginx
-  namespace: cloudraya-staging
 spec:
   replicas: 2
   selector:
