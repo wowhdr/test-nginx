@@ -6,7 +6,7 @@ metadata:
     app: test-nginx
   name: test-nginx
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: test-nginx
@@ -21,6 +21,9 @@ spec:
       - image: nginx
         name: nginx
         resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
           limits:
             memory: "1Gi"
             cpu: "1000m"
